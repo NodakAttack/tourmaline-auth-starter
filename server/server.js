@@ -1,3 +1,4 @@
+// order in server.js file is important
 require('dotenv').config();
 const express = require('express');
 
@@ -20,6 +21,7 @@ app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 
+// *middleware before routes*
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/pets', petRouter)
