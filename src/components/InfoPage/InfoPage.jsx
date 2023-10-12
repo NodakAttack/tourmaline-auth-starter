@@ -17,8 +17,18 @@ function InfoPage() {
 
   const addPet = (e) => {
     e.preventDefault();
-    dispatch({type: 'ADD_PET', payload: { name: petName }})
+    dispatch({type: 'ADD_PET', payload: { name: petName }, callback})
   };
+
+  const callback = () => {
+    console.log("callback function!");
+    // alert
+    // history push (home) 
+    // home view after add maybes?
+    // mat ui
+    // ...
+  }
+
 
   return (
     <div className="container">

@@ -20,6 +20,8 @@ function* addPet(action) {
     try{
         yield axios.post('/api/pets', action.payload)
         yield put({type: 'FETCH_PET_LIST'})
+        // calls function passed from component
+        action.callbak();
     } catch (error) {
         console.log("ERROR in addPet", error);
         alert("Something went wrong!");
